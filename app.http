@@ -1,0 +1,95 @@
+
+/////All Users API/// 
+GET http://localhost:3000/users
+####
+
+///User Regestration///
+
+POST http://localhost:3000/userRegister
+Content-Type:application/json 
+
+{
+  "username":"rakesh",
+  "password":"rakesh@123"
+
+}
+
+
+###
+/////User Login////
+
+POST http://localhost:3000/userlogin
+Content-Type:application/json 
+
+{
+  "username":"yuva",
+  "password":"Yuva@123"
+
+}
+######
+
+/////All admins user can see with Jwt token///
+GET http://localhost:3000/admins
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1dmEiLCJpYXQiOjE3Mjg1Mjk0MDR9.bfKQccHr5Fmuhczd1ORu1oEA08Q5extG9GXMCG-D4Iw
+#####
+
+////ALL Assignments//
+GET http://localhost:3000/allAssignments/
+
+####
+
+////////////////upload Assignments via user id and admin id //////////////////////////
+
+POST http://localhost:3000/assignments/upload
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Inl1dmEiLCJpYXQiOjE3Mjg1Mjk0MDR9.bfKQccHr5Fmuhczd1ORu1oEA08Q5extG9GXMCG-D4Iw
+Content-Type: application/json
+
+{
+  "userId": "rakesh", 
+  "task": "need to work on developement",
+  "admin": "pardhu"    
+}
+
+##############
+
+//////////Admin Register/////////////
+POST http://localhost:3000/adminRegister
+Content-Type:application/json 
+
+{
+  "username":"pardhu",
+  "password":"pardhu@123"
+
+}
+#######################
+
+/////////////////Admin login ///////////////
+
+POST http://localhost:3000/adminlogin
+Content-Type:application/json 
+
+{
+  "username":"pardhu",
+  "password":"pardhu@123"
+
+}
+
+#######
+
+/////////////Admin can see taged assignments/////////////
+GET http://localhost:3000/assignments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmRodSIsImlhdCI6MTcyODU0NjI0Nn0.oyIp2iXz5d9bk-gRgPHkDQ_KxnrhdD4Lbx6RHGu24Ww
+
+#######################
+
+//////////////////////Assignment Accept //////////////////
+
+POST http://localhost:3000/assignments/1/accept
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmRodSIsImlhdCI6MTcyODU0NjI0Nn0.oyIp2iXz5d9bk-gRgPHkDQ_KxnrhdD4Lbx6RHGu24Ww
+
+#####################
+
+////////////////////////assignment Reject /////////////////////////
+POST http://localhost:3000/assignments/1/reject
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhcmRodSIsImlhdCI6MTcyODU0NjI0Nn0.oyIp2iXz5d9bk-gRgPHkDQ_KxnrhdD4Lbx6RHGu24Ww
+#####
